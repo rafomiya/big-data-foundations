@@ -17,4 +17,4 @@ This repository was made to document and store my annotations on the Semantix Bi
     4. [Partitioning](3-hive/4_partitioning.md)
     5. [Repair a table](3-hive/5_repair_table.md)
     6. [Exercise: Partitioning](3-hive/6_exercises_partitioning.md)
-    7. [Exercise: Read data with Hive.](3-hive/7_exercises_hive_read.md)
+    7. [Exercise: Read data with Hive](3-hive/7_exercises_hive_read.md)
