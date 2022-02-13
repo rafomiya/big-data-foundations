@@ -29,7 +29,7 @@ select * from pop limit 10;
 -- +--------+----------------+----------+-----------+-------------+----------------+----------------------+
 ```
 
-3. Load the HDFS file `/user/aluno/rafael/data/população/populacaoLA.csv` to the Hive table `pop`.
+3. Load the HDFS file `/user/aluno/rafael/data/populacao/populacaoLA.csv` to the Hive table `pop`.
 
 ```sql
 load data inpath '/user/aluno/rafael/data/populacao/populacaoLA.csv' into table pop;

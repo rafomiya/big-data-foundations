@@ -42,7 +42,7 @@ where year = 2017;
 
 ```sql
 select
-  count(*) as `count_2017`
+  sum(frequency) as `count_2017`
 from birth
 where year = 2017
 limit 1;
@@ -50,7 +50,7 @@ limit 1;
 -- +-------------+
 -- | count_2017  |
 -- +-------------+
--- | 32469       |
+-- | 3546301     |
 -- +-------------+
 ```
 
@@ -58,10 +58,11 @@ limit 1;
 
 ```sql
 select
-  count(case when sex = 'F' then 1 end) as `amount_female`,
-  count(case when sex = 'M' then 1 end) as `amount_male`
+  sex,
+  sum(frequency) as `amount`
 from birth
-where year = 2015;
+where year = 2015
+group by sex;
 -- output:
 -- +----------------+--------------+
 -- | amount_female  | amount_male  |
@@ -75,8 +76,8 @@ where year = 2015;
 ```sql
 select
   year,
-  count(case when sex = 'F' then 1 end) as `amount_female`,
-  count(case when sex = 'M' then 1 end) as `amount_male`
+  sum(case when sex = 'F' then frequency end) as `amount_female`,
+  sum(case when sex = 'M' then frequency end) as `amount_male`
 from birth
 group by year
 order by year desc;
@@ -95,8 +96,8 @@ order by year desc;
 ```sql
 select
   year,
-  count(case when sex = 'F' then 1 end) as `amount_female`,
-  count(case when sex = 'M' then 1 end) as `amount_male`
+  sum(case when sex = 'F' then frequency end) as `amount_female`,
+  sum(case when sex = 'M' then frequency end) as `amount_male`
 from birth
 where name like 'A%'
 group by year
@@ -105,9 +106,9 @@ order by year desc;
 -- +-------+----------------+--------------+
 -- | year  | amount_female  | amount_male  |
 -- +-------+----------------+--------------+
--- | 2017  | 2927           | 1574         |
--- | 2016  | 3038           | 1548         |
--- | 2015  | 3067           | 1505         |
+-- | 2017  | 308551         | 185566       |
+-- | 2016  | 324185         | 191854       |
+-- | 2015  | 329690         | 194722       |
 -- +-------+----------------+--------------+
 ```
 
@@ -120,7 +121,7 @@ select
 from birth
 where year = 2016
 order by frequency desc
-limit 3;
+limit 5;
 -- output:
 -- +---------+------------+
 -- |  name   | frequency  |
@@ -135,37 +136,21 @@ limit 3;
 
 ```sql
 select
-  name as `female_names`,
-  frequency as `amount`
+  name,
+  sex,
+  frequency
 from birth
-where year = 2016 and sex = 'F'
+where year = 2016
 order by frequency desc
 limit 5;
 -- output:
--- +---------------+--------+
--- | female_names  | amount |
--- +---------------+--------+
--- | Emma          | 19471  |
--- | Olivia        | 19327  |
--- | Ava           | 16283  |
--- | Sophia        | 16112  |
--- | Isabella      | 14772  |
--- +---------------+--------+
-select
-  name as `male_names`,
-  frequency as `amount`
-from birth
-where year = 2016 and sex = 'M'
-order by frequency desc
-limit 5;
--- output:
--- +-------------+--------+
--- | male_names  | amount |
--- +-------------+--------+
--- | Noah        | 19082  |
--- | Liam        | 18198  |
--- | William     | 15739  |
--- | Mason       | 15230  |
--- | James       | 14842  |
--- +-------------+--------+
+-- +---------+------+------------+
+-- |  name   | sex  | frequency  |
+-- +---------+------+------------+
+-- | Emma    | F    | 19471      |
+-- | Olivia  | F    | 19327      |
+-- | Noah    | M    | 19082      |
+-- | Liam    | M    | 18198      |
+-- | Ava     | F    | 16283      |
+-- +---------+------+------------+
 ```

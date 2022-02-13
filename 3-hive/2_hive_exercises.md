@@ -22,15 +22,12 @@ show databases;
 # +----------------+
 # | default        |
 # +----------------+
-
 ```
 
 3. Create the database `rafael`.
 
 ```bash
 create database rafael;
-# output:
-# No rows affected (0.122 seconds)
 ```
 
 4. Create the table `pop`.
@@ -68,6 +65,5 @@ desc pop;
 # | total_households        | int        |          |
 # | average_household_size  | float      |          |
 # +-------------------------+------------+----------+
-
 ```
 
