@@ -33,7 +33,7 @@
 4. Download the file `escola/aluno.json` to the local workspace `/`.
 
 ```bash
-hdfs dfs -get /user/aluno/rafael/data/exercises-data/escola/alunos.json /
+hdfs dfs -get /user/aluno/rafael/data/escola/alunos.json /
 ```
 
 5. Delete the folder `recover`.
@@ -58,13 +58,13 @@ hdfs dfs -get /user/aluno/rafael/data/exercises-data/escola/alunos.json /
   ```bash
   hdfs dfs -find /user -name alunos.csv
   # output:
-  # /user/aluno/rafael/data/exercises-data/escola/alunos.csv
+  # /user/aluno/rafael/data/escola/alunos.csv
   ```
 
 8. Show the last 1KB of the file `alunos.csv`.
 
   ```bash
-  hdfs dfs -tail /user/aluno/rafael/data/exercises-data/escola/alunos.csv
+  hdfs dfs -tail /user/aluno/rafael/data/escola/alunos.csv
   # output:
   # NHO KANAREK",2018,0,N,2081113,2399342
   # 26660,"PIETRA DE SOUZA MATANA",2019,0,N,2081113,2399351
@@ -90,7 +90,7 @@ hdfs dfs -get /user/aluno/rafael/data/exercises-data/escola/alunos.json /
 9. Show the first 2 lines of the file `alunos.csv`.
 
   ```bash
-  hdfs dfs -cat /user/aluno/rafael/data/exercises-data/escola/alunos.csv | head -n 2
+  hdfs dfs -cat /user/aluno/rafael/data/escola/alunos.csv | head -n 2
   # output:
   # id_discente,nome,ano_ingresso,periodo_ingresso,nivel,id_forma_ingresso,id_curso
   # 18957,"ABELARDO DA SILVA COELHO",2017,1,G,62151,76995
@@ -99,9 +99,9 @@ hdfs dfs -get /user/aluno/rafael/data/exercises-data/escola/alunos.json /
 10. Make the checksum of the file `alunos.csv`.
 
   ```bash
-  hdfs dfs -checksum /user/aluno/rafael/data/exercises-data/escola/alunos.csv | head -n 2
+  hdfs dfs -checksum /user/aluno/rafael/data/escola/alunos.csv | head -n 2
   # output:
-  # /user/aluno/rafael/data/exercises-data/escola/alunos.csv	MD5-of-0MD5-of-512CRC32C	000002000000000000000000164b9235a4d65a1e8ebfe12eb97ac471
+  # /user/aluno/rafael/data/escola/alunos.csv	MD5-of-0MD5-of-512CRC32C	000002000000000000000000164b9235a4d65a1e8ebfe12eb97ac471
   ```
 
 11. Create an empty file called `test` on the directory `data`.
@@ -121,18 +121,18 @@ hdfs dfs -setrep 2 /user/aluno/rafael/data/test
 13. Show informations about the file `alunos.csv`.
 
 ```bash
-hdfs dfs -stat /user/aluno/rafael/data/exercises-data/escola/alunos.csv
+hdfs dfs -stat /user/aluno/rafael/data/escola/alunos.csv
 # output:
 # 2022-02-09 17:23:16
-hdfs dfs -stat %r /user/aluno/rafael/data/exercises-data/escola/alunos.csv
+hdfs dfs -stat %r /user/aluno/rafael/data/escola/alunos.csv
 # output:
 # 3
-hdfs dfs -stat %o /user/aluno/rafael/data/exercises-data/escola/alunos.csv
+hdfs dfs -stat %o /user/aluno/rafael/data/escola/alunos.csv
 # output:
 # 134217728
 ```
 
-14. Show the `data`s disk usage.
+14. Show the `data`'s disk usage.
 
 ```bash
 hdfs dfs -du -h /user/aluno/rafael/data/
