@@ -39,9 +39,9 @@
 
 5. Download the file `escola/aluno.json` to the local workspace `/`.
 
-```bash
-hdfs dfs -get /user/aluno/rafael/data/escola/alunos.json /
-```
+  ```bash
+  hdfs dfs -get /user/aluno/rafael/data/escola/alunos.json /
+  ```
 
 6. Delete the folder `recover`.
 
@@ -127,21 +127,6 @@ hdfs dfs -get /user/aluno/rafael/data/escola/alunos.json /
 
 14. Show informations about the file `alunos.csv`.
 
-<<<<<<< HEAD
-  ```bash
-  hdfs dfs -stat /user/aluno/rafael/data/exercises-data/escola/alunos.csv
-  # output:
-  # 2022-02-09 17:23:16
-  hdfs dfs -stat %r /user/aluno/rafael/data/exercises-data/escola/alunos.csv
-  # output:
-  # 3
-  hdfs dfs -stat %o /user/aluno/rafael/data/exercises-data/escola/alunos.csv
-  # output:
-  # 134217728
-  ```
-
-15. Show the `data`s disk usage.
-=======
 ```bash
 hdfs dfs -stat /user/aluno/rafael/data/escola/alunos.csv
 # output:
@@ -166,7 +151,6 @@ hdfs dfs -df -h /user/aluno/rafael/data/
 # Filesystem               Size     Used  Available  Use%
 # hdfs://namenode:8020  198.2 G  539.7 M    130.3 G    0%
 ```
->>>>>>> 37ee4c610462254a06a3127ef44464d08f2e004d
 
   ```bash
   hdfs dfs -du -h /user/aluno/rafael/data/
