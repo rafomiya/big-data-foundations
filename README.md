@@ -18,3 +18,9 @@ This repository was made to document and store my annotations on the Semantix Bi
     5. [Repair a table](3-hive/5_repair_table.md)
     6. [Exercise: Partitioning](3-hive/6_exercises_partitioning.md)
     7. [Exercise: Read data with Hive](3-hive/7_exercises_hive_read.md)
+4. Sqoop
+    1. [Sqoop introduction](4-sqoop/1_sqoop_introduction.md)
+    2. [Exercise: create the databases](4-sqoop/2_exercise_create_database.md)
+    3. [Sqoop CLI commands](4-sqoop/3_sqoop_commands.md)
+    4. [Database connection](4-sqoop/4_database_connection.md)
+    5. [Exercise: Sqoop commands](4-sqoop/5_exercises_sqoop.md)
