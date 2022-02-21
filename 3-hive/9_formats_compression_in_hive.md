@@ -37,7 +37,7 @@ hive> SET mapred.output.compression.type=BLOCK;
 ​	Add this to the end of the `create table` statement:
 
 ```sql
-stored as <file_format> tblproperties('<file_format>.compress'='<compression>');
+stored as <fileformat> tblproperties('<fileformat>.compress'='<compression>');
 ```
 
 ​	Available options to replace `<codec>`:

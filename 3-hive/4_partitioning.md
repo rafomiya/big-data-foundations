@@ -116,7 +116,7 @@ clustered by (id) into 4 buckets;
 - Change the name of a partition in a table
 
   - ```sql
-    alter table <tbname> partition <old_name> rename to partition <new_name>;
+    alter table <tbname> partition <oldname> rename to partition <newname>;
     ```
 
 - When creating new partitions, **never** do it through the HDFS `mkdir` command.
