@@ -34,13 +34,13 @@ sqoop import \
 
 # 2
 sqoop import \
---table <tb_name> \
+--table <tbname> \
 --connect <...> \
 --columns "id,last_name"
 
 # 3
 sqoop import \
---table <tb_name> \
+--table <tbname> \
 --connect <...> \
---where <where_clause>
+--where <whereclause>
 ```
